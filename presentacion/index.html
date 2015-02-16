@@ -27,9 +27,14 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-			.nota_pie{text-align:'left'; vertical-align:'bottom';}
+			
 		</script>
-
+		<style>
+			h1.lowercase{
+			text-transform: lowercase;}
+			.nota_pie{position:absolute; top: 90%; left:10%; text-align:'left'; vertical-align:'bottom';}
+			.tabla{font-size: 0.1em; line-height: 0.6em}
+		</style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -63,18 +68,21 @@
 					<p>
 						Lenguaje interpretado parecido a Perl, pero con sintaxis más sencilla para el principiante. Tiene tipado dinámico, fuerte, orientación a objetos y...¡es multiplataforma!
 					</p>
-					<p><span class='nota_pie'>Nota: Funciona o no??</span></p>
-					<p text-align='left'>Nota: Funciona o no??</p>
+					<div align="left">
+						<p>Nota: Funciona o no??</p>
+						<p text-align='left'><span class="nota_pie">Nota: Funciona o no??</span></p>
+					</div>
+					
 				</section>
 				<!-- A partir de aquí todo lo de bio -->
 				<section>
-					<h2>FIN DE INFO <br> COMIENZA BIO</h2>
+					<h2>FIN DE INFO <br>COMIENZA BIO</h2>
 				</section>
 				<section>
 					<section>
 						<h2>¿Qué es el ADN?</h2>
 						<p>
-							Macromolécula de nucleótidos. Estos se forman por un azúcar (desoxirribosa), un fosfato (H₃PO₄), y una base nitrogenada (Adenina, Timina, Citosina y Guanina).
+							Macromolécula de desoxirribonucleótidos. Estos se forman por un azúcar (desoxirribosa), un fosfato (H₃PO₄), y una base nitrogenada (Adenina, Timina, Citosina y Guanina).
 							Contiene la información genética de los seres vivos (no todos)
 						</p>
 					</section>
@@ -92,11 +100,439 @@
 						<p>Es debida a los puentes de hidrógeno</p>
 					</section>
 					<section>
-						<h2>Replicación</h2>
-						<iframe width="960" height="540" src="https://www.youtube.com/embed/4jtmOZaIvS0?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-					</section>
+						<h2>Dogma central de la biología molecular</h2>
+						<div align="left" width="50%">
+							<p>Replicación: <p class="fragment">ADN se multiplica -> ADN</p></p>
+							<p>Transcripción: <p class="fragment">El ADN se interpreta -> ARNm</p></p>
+						</div>
+
+						<div align="right" width="50%">							
+							<p>Traducción: <p class="fragment">ARNm -> proteína</p></p>
+							<p>Catálisis: <p class="fragment">proteína -> reacción</p></p>
+						</div>
 					
-				
+					</section>
+					<section>
+						<h2>Replicación</h2>
+						<iframe width="640" height="360" src="https://www.youtube.com/embed/4jtmOZaIvS0?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+						<p>Una cadena de ADN se desenrolla y enzimas ayudan a que se unan a las dos hebras los nucleótidos complementarios, resultando dos cadenas.</p>
+					</section>
+					<section>
+						<h2>Transcripción</h2>
+						<p>Se sintetiza una cadena de ARNm (mensajero) a partir de un ADN. Este es el intermediario para la expresión del gen.</p>
+						<iframe width="420" height="315" src="https://www.youtube.com/embed/qOA25GbUkdA?t=1m40s" frameborder="0" allowfullscreen></iframe>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>¿Qué es el ARN?</h2>
+						<p>Macromolécula de ribonucleótidos. Estos se forman por un azúcar (ribosa), un fosfato (H₃PO₄), y una base nitrogenada (Adenina, Uracilo, Citosina y Guanina).
+						Hay muchos tipos. Contine la información genética en algunos virus</p>
+					</section>
+					<section>
+						<h2>ARN mensajero (ARN<h2b>m</h2b>)</h2>
+						<p>Copia la cadena de ADN de forma complementaria. Es el paso intermedio para la expresión del gen</p>
+					</section>
+					<section>
+						<h2>ARN transferente (ARN<h2b>t</h2b>)</h2>
+						<p>Lleva unido un aminoácido, identificado por tres nucleótidos del ARNm (codón)</p>
+					</section>
+					<section>
+						<h2>Traducción</h2>
+						<p>La hebra de ARNm se une a un ribosoma. Este une una parte complementaria del ARNt (anticodón) al ARNm (codón) y crea enlaces entre los sucesivos aminoácidos.
+						<p>Después de alguna modificación, la proteína está formada.</p>
+					<section>
+						<iframe width="420" height="315" src="https://www.youtube.com/embed/stb1KGHivJo" frameborder="0" allowfullscreen></iframe>
+					</section>
+					</section>
+					<section>
+						<h2>Código genético (ADN)</h2>
+						<table style='font-size:0.8em;'>
+							<thead>
+								<tr>
+									<th></th>
+									<th colspan='12'>Segunda Letra</th>
+								</tr>
+								<tr>
+									<th colspan='3'> </th>
+									<th>T</th>
+									<th> </th>
+									<th>C</th>
+									<th> </th>
+									<th>A</th>
+									<th> </th>
+									<th>G</th>
+									<th colspan='5'> </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan='16' style='line-height:0.8em; font-weight:bold'>P<br>r<br>i<br>m<br>e<br>r<br>a<br><br>L<br>e<br>t<br>r<br>a</td>
+									<td rowspan='17' style='color: #222'>  .</td>
+									<td rowspan='4'><span style='color: #222'>_</span>T<span style='color: #222'>_</span></td>
+									<td>TTT</td>
+									<td rowspan='2' style='color: #3278AA;'>Phe</td>
+									<td>TCT</td>
+									<td rowspan='4' style='color: #3278AA;'>Ser</td>
+									<td>TAT</td>
+									<td rowspan='2' style='color: #3278AA;'>Tyr</td>
+									<td>TGT</td>
+									<td rowspan='2' style='color: #3278AA;'>Cys</td>
+									<td><span style='color: #222'>_</span>T<span style='color: #222'>_</span></td>
+									<td rowspan='17' style='color: #222'>  .</td>
+									<td rowspan='16' style='line-height:0.8em; font-weight:bold'>T<br>e<br>r<br>c<br>e<br>r<br>a<br><br>L<br>e<br>t<br>r<br>a</td>
+								</tr>
+								<tr>
+									<td>TTC</td>
+									<td>TCC</td>
+									<td>TAC</td>
+									<td>TGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>TTA</td>
+									<td rowspan='2' style='color: #3278AA;'>Leu</td>
+									<td>TCA</td>
+									<td>TAA</td>
+									<td rowspan='2' style='color: red;'>Stop</td>
+									<td>TGA</td>
+									<td style='color: red;'>Stop</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>TTG</td>
+									<td>TCG</td>
+									<td>TAG</td>
+									<td>TGG</td>
+									<td style='color: #3278AA;'>Trp</td>
+									<td>G</td>
+
+								</tr>
+								<!-- Segunda gran fila (C)-->
+								<tr>
+									
+									<td rowspan='4'>C</td>
+									<td>CTT</td>
+									<td rowspan='4' style='color: #3278AA;'>Leu</td>
+									<td>CCT</td>
+									<td rowspan='4' style='color: #3278AA;'>Pro</td>
+									<td>CAT</td>
+									<td rowspan='2' style='color: #3278AA;'>His</td>
+									<td>CGT</td>
+									<td rowspan='4' style='color: #3278AA;'>Arg</td>
+									<td>T</td>
+									
+								</tr>
+								<tr>
+									<td>CTC</td>
+									<td>CCC</td>
+									<td>CAC</td>
+									<td>CGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>CTA</td>
+									<td>CCA</td>
+									<td>CAA</td>
+									<td rowspan='2' style='color: #3278AA;'>Gln</td>
+									<td>CGA</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>CTG</td>
+									<td>CCG</td>
+									<td>CAG</td>
+									<td>CGG</td>
+									<td>G</td>
+
+								</tr>
+								<!-- Tercera gran fila (A) -->
+								<tr>
+									
+									<td rowspan='4'>A</td>
+									<td>ATT</td>
+									<td rowspan='3' style='color: #3278AA;'>Ile</td>
+									<td>ACT</td>
+									<td rowspan='4' style='color: #3278AA;'>Thr</td>
+									<td>AAT</td>
+									<td rowspan='2' style='color: #3278AA;'>Asn</td>
+									<td>AGT</td>
+									<td rowspan='2' style='color: #3278AA;'>Ser</td>
+									<td>T</td>
+									
+								</tr>
+								<tr>
+									<td>ATC</td>
+									<td>ACC</td>
+									<td>AAC</td>
+									<td>AGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>ATA</td>
+									<td>ACA</td>
+									<td>AAA</td>
+									<td rowspan='2' style='color: #3278AA;'>Lys</td>
+									<td>AGA</td>
+									<td rowspan='2' style='color: #3278AA;'>Arg</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>ATG</td>
+									<td style='color: green'>Met</td>
+									<td>ATG</td>
+									<td>AAG</td>
+									<td>AGG</td>
+									<td>G</td>
+
+								</tr>
+								<!-- Cuarta gran fila (G) -->
+								<tr>
+									
+									<td rowspan='4'>A</td>
+									<td>GTT</td>
+									<td rowspan='4' style='color: #3278AA;'>Val</td>
+									<td>GCT</td>
+									<td rowspan='4' style='color: #3278AA;'>Ala</td>
+									<td>GAT</td>
+									<td rowspan='2' style='color: #3278AA;'>Asp</td>
+									<td>GGT</td>
+									<td rowspan='4' style='color: #3278AA;'>Gly</td>
+									<td>T</td>
+									
+								</tr>
+								<tr>
+									<td>GTC</td>
+									<td>GCC</td>
+									<td>GAC</td>
+									<td>GGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>GTA</td>
+									<td>GCA</td>
+									<td>GAA</td>
+									<td rowspan='2' style='color: #3278AA;'>Glu</td>
+									<td>GGA</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>GTG</td>
+									<td>GCG</td>
+									<td>GAG</td>
+									<td>GGG</td>
+									<td>G</td>
+
+								</tr>
+								<tr>
+									<td colspan='13'>*Cada codón corresponde a un aa</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>Código genético (ARN<h2b>m</h2b>)</h2>					
+						<table style='font-size:0.8em;'>
+							<thead>
+								<tr>
+									<th></th>
+									<th colspan='12'>Segunda Letra</th>
+								</tr>
+								<tr>
+									<th colspan='3'> </th>
+									<th>U</th>
+									<th> </th>
+									<th>C</th>
+									<th> </th>
+									<th>A</th>
+									<th> </th>
+									<th>G</th>
+									<th colspan='5'> </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan='16' style='line-height:0.8em; font-weight:bold'>P<br>r<br>i<br>m<br>e<br>r<br>a<br><br>L<br>e<br>t<br>r<br>a</td>
+									<td rowspan='17' style='color: #222'>  .</td>
+									<td rowspan='4'><span style='color: #222'>_</span>U<span style='color: #222'>_</span></td>
+									<td>UUU</td>
+									<td rowspan='2' style='color: #3278AA;'>Phe</td>
+									<td>UCU</td>
+									<td rowspan='4' style='color: #3278AA;'>Ser</td>
+									<td>UAU</td>
+									<td rowspan='2' style='color: #3278AA;'>Tyr</td>
+									<td>UGU</td>
+									<td rowspan='2' style='color: #3278AA;'>Cys</td>
+									<td><span style='color: #222'>_</span>U<span style='color: #222'>_</span></td>
+									<td rowspan='17' style='color: #222'>  .</td>
+									<td rowspan='16' style='line-height:0.8em; font-weight:bold'>T<br>e<br>r<br>c<br>e<br>r<br>a<br><br>L<br>e<br>t<br>r<br>a</td>
+								</tr>
+								<tr>
+									<td>UUC</td>
+									<td>UCC</td>
+									<td>UAC</td>
+									<td>UGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>UUA</td>
+									<td rowspan='2' style='color: #3278AA;'>Leu</td>
+									<td>UCA</td>
+									<td>UAA</td>
+									<td rowspan='2' style='color: red;'>Stop</td>
+									<td>UGA</td>
+									<td style='color: red;'>Stop</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>UUG</td>
+									<td>UCG</td>
+									<td>UAG</td>
+									<td>UGG</td>
+									<td style='color: #3278AA;'>Trp</td>
+									<td>G</td>
+
+								</tr>
+								<!-- Segunda gran fila (C)-->
+								<tr>
+									
+									<td rowspan='4'>C</td>
+									<td>CUU</td>
+									<td rowspan='4' style='color: #3278AA;'>Leu</td>
+									<td>CCU</td>
+									<td rowspan='4' style='color: #3278AA;'>Pro</td>
+									<td>CAU</td>
+									<td rowspan='2' style='color: #3278AA;'>His</td>
+									<td>CGU</td>
+									<td rowspan='4' style='color: #3278AA;'>Arg</td>
+									<td>U</td>
+									
+								</tr>
+								<tr>
+									<td>CUC</td>
+									<td>CCC</td>
+									<td>CAC</td>
+									<td>CGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>CUA</td>
+									<td>CCA</td>
+									<td>CAA</td>
+									<td rowspan='2' style='color: #3278AA;'>Gln</td>
+									<td>CGA</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>CUG</td>
+									<td>CCG</td>
+									<td>CAG</td>
+									<td>CGG</td>
+									<td>G</td>
+
+								</tr>
+								<!-- Tercera gran fila (A) -->
+								<tr>
+									
+									<td rowspan='4'>A</td>
+									<td>AUU</td>
+									<td rowspan='3' style='color: #3278AA;'>Ile</td>
+									<td>ACU</td>
+									<td rowspan='4' style='color: #3278AA;'>Thr</td>
+									<td>AAU</td>
+									<td rowspan='2' style='color: #3278AA;'>Asn</td>
+									<td>AGU</td>
+									<td rowspan='2' style='color: #3278AA;'>Ser</td>
+									<td>U</td>
+									
+								</tr>
+								<tr>
+									<td>AUC</td>
+									<td>ACC</td>
+									<td>AAC</td>
+									<td>AGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>AUA</td>
+									<td>ACA</td>
+									<td>AAA</td>
+									<td rowspan='2' style='color: #3278AA;'>Lys</td>
+									<td>AGA</td>
+									<td rowspan='2' style='color: #3278AA;'>Arg</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>AUG</td>
+									<td style='color: green'>Met</td>
+									<td>ACG</td>
+									<td>AAG</td>
+									<td>AGG</td>
+									<td>G</td>
+
+								</tr>
+								<!-- Cuarta gran fila (G) -->
+								<tr>
+									
+									<td rowspan='4'>A</td>
+									<td>GUU</td>
+									<td rowspan='4' style='color: #3278AA;'>Val</td>
+									<td>GCU</td>
+									<td rowspan='4' style='color: #3278AA;'>Ala</td>
+									<td>GAU</td>
+									<td rowspan='2' style='color: #3278AA;'>Asp</td>
+									<td>GGU</td>
+									<td rowspan='4' style='color: #3278AA;'>Gly</td>
+									<td>U</td>
+									
+								</tr>
+								<tr>
+									<td>GUC</td>
+									<td>GCC</td>
+									<td>GAC</td>
+									<td>GGC</td>
+									<td>C</td>
+									
+								</tr>
+								<tr>
+									<td>GUA</td>
+									<td>GCA</td>
+									<td>GAA</td>
+									<td rowspan='2' style='color: #3278AA;'>Glu</td>
+									<td>GGA</td>
+									<td>A</td>
+
+								</tr>
+								<tr>
+									<td>GUG</td>
+									<td>GCG</td>
+									<td>GAG</td>
+									<td>GGG</td>
+									<td>G</td>
+
+								</tr>
+								<tr>
+									<td colspan='13'>*Cada codón corresponde a un aa</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</section>				
 				</section>
 				<!-- A partir de aquí todas las diapos de ejemplo de reveal.js -->
 				<section>

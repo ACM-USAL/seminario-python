@@ -34,7 +34,7 @@ body {
  *********************************************/
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 20px 0;
-  color: #fff;
+  color: #3278AA;
   font-family: 'Source Sans Pro', Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -58,12 +58,42 @@ body {
 .reveal h1 {
   text-shadow: none; }
 
+.reveal h1b, .reveal h2b, .reveal h3b, .reveal h4b, .reveal h5b, .reveal h6b {
+  margin: 0 0 20px 0;
+  color: #3278AA;
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: lowercase;
+  text-shadow: none;
+  word-wrap: break-word; }
+
+.reveal h1b {
+  font-size: 1.5em; }
+
+.reveal h2b {
+  font-size: 0.8em; }
+
+.reveal h3b {
+  font-size: 0.6em; }
+
+.reveal h4b {
+  font-size: 0.3em; }
+
+.reveal h1b {
+  text-shadow: none; }
+
 /*********************************************
  * OTHER
  *********************************************/
 .reveal p {
   margin: 20px 0;
-  line-height: 1.3; }
+  line-height: 1.3em; }
+
+.reveal table {
+  line-height: 0.6em;
+}
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img, .reveal video, .reveal iframe {
@@ -149,14 +179,16 @@ body {
 .reveal table {
   margin: auto;
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+  vertical-align: middle; }
 
 .reveal table th {
   font-weight: bold; }
 
 .reveal table th, .reveal table td {
-  text-align: left;
-  padding: 0.2em 0.5em 0.2em 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.2em 0.3em 0.2em 0.3em;
   border-bottom: 1px solid; }
 
 .reveal table tr:last-child td {
