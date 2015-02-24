@@ -186,6 +186,9 @@
 									<td>%</td>
 									<td>Módulo</td>
 								</tr>
+								<tr>
+									<td>==, !=, &lt=, &gt=, &lt, &gt</td>
+									<td>Igual, distinto, mayor/menor que...</td>
 							</tbody>
 						</table>
 					</section>
@@ -211,9 +214,53 @@
 						print(numeros[1:10:2])<br>
 						print(numeros[5:])</code>
 					</section>
+					<section>
+						<h3>Tuplas</h3>
+						<p>Son muy similares a las listas</p>
+						<code>tupla=(4,8,15,"16")<br></code>
+						<p>Todas las operaciones de acceso son idénticas</p>
+						<strong>Una tupla no puede modificarse una vez declarada</strong>
+					</section>
+					<section>
+						<h3>Diccionarios</h3>
+						<p>Un diccionario es una estructura en la que cada miembro está formado por dos elementos, la clave y el valor</p>
+						<p>El acceso a los elementos se realiza por la clave asignada</p>
+						<code>apellidos={"Hugo":"Reyes","Jack":"Shephard","Kate":"Austen"}</code>
+						<code>print(apellidos["Hugo"]</code>
+						<code>apellidos["James"]="Ford"</code>
+					</section>
 				</section>
 				<section>
-					<h2>Estructuras de control</h2>
+					<section>
+						<h2>Estructuras de control</h2>
+					</section>
+					<section>
+						<h3>Condicionales</h3>
+						<p>Determinan la secuencia de código a ejecutar en función de la veracidad de una condición</p>
+						<code style="display:block;text-align:left !important;">numero=3<br>
+						if numero > 4:<br>
+						&emsp;&emsp;print("El número es mayor que cuatro")
+						elif numero == 4:<br>
+						&emsp;&emsp;print("El número es igual a cuatro")
+						else:<br>
+						&emsp;&emsp;print("El número es menor que cuatro")
+						</code>
+					</section>
+					<section>
+						<h3>La sintaxis de Python</h3>
+						<p>Todo bloque de código tiene que estar delimitado. En muchos lenguajes se utilizan llaves ({,}) u otro símbolo similar para agrupar sentencias que deben ejecutarse en el mismo ámbito (dentro de una sentencia condicional, una función...). Python, para permitir una mayor legibilidad, determina el ámbito según el número de espacios que lo preceden (o tabulados)</p>
+						
+					</section>
+					<section>
+						<code style="display:block;text-align:left !important;">
+							if numero >= 4:<br>
+								&emsp;&emsp;print("Estoy dentro del condicional")<br>
+								&emsp;&emsp;if numero == 4:<br>
+								&emsp;&emsp;&emsp;&emsp;print("En el segundo condicional")<br>
+								&emsp;&emsp;print("En el primer condicional")<br>
+							print("Fuera de los dos condicionales")<br>
+						</code>
+					</section>
 				</section>
 				<section>
 					<h2>Módulos</h2>
