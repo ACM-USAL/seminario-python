@@ -96,26 +96,27 @@
 				<section>
 					<section>
 						<h2>Tipos de datos básicos</h2>
-						<p>En Python no es necesario definir el tipo de cada variable (entero, real, caracter). El entorno se encarga de la representación adecuada de cada elemento</p>
-						<p>Sin embargo, al trabajar con diferentes tipos de datos la conversión debe hacerse de forma explícita</p>
+						<p>En Python no es necesario definir el tipo de cada variable (entero, real, caracter). El entorno se encarga de la representación adecuada de cada elemento.</p>
+						<p>Sin embargo, al trabajar con diferentes tipos de datos la conversión debe hacerse de forma explícita, o Python devolverá un error.</p>
 					</section>
 					<section>
 						<h3>Números</h3>
-						<p>Python trabaja con cualquier valor numérico típico (entero, real, complejo...)</p>
+						<p>Python trabaja con cualquier valor numérico típico (entero, real, complejo...) y soporta por defecto la mayoría de operaciones comunes.</p>
 						<code>complejo = 2.1 + 7.8j</code><br>
 						<code>real = 0.1e-3</code><br>
 						<code>entero = 0×17</code><br>
 					</section>
 					<section>
 						<h3>Cadenas de texto</h3>
-						<p>Una cadena de texto consiste en una sucesión de caracteres</p>
-						<p>Python ofrece formas de trabajar con diferentes codificaciones de caracteres, por defecto, UTF-8</p>
+						<p>Una cadena de texto consiste en una sucesión de caracteres.</p>
+						<p>Python ofrece formas de trabajar con diferentes codificaciones de caracteres, por defecto, UTF-8.</p>
 						<code>"cadena"</code><br>
 						<code>r"cadena raw"</code><br>
 						<code>u"cäðenα Ünicöde"</code><br>
 						<code>"""cadena<br>
 						en varias<br>
 						líneas"""</code>
+						<p><span style="color:red">Importante:</span> Una cadena no puede modificarse una vez creada, pero se pueden realizar operaciones sobre la misma que retornen una nueva cadena.</p>
 					</section>
 					<section>
 						<h3>Booleanos</h3>
@@ -275,6 +276,32 @@
 						<p>Iterar por los elementos de una estructura es sencillo:</p>
 						<code style="display:block;text-align:left">for elemento in [0,1,2,3,4,5,6,7,8,9]:<br>
 						&emsp;&emsp;print(elemento)</code>
+					</section>
+					<section>
+						<h3>Salida de una iteración</h3>
+						<p>Una iteración termina cuando</p>
+						<ul>
+							<li>Se terminan las instrucciones del bucle (salida <em>limpia</em>).</li>
+							<li>Se ejecuta la instruccion <code>continue</code>, pasando a la siguiente ejecución.</li>
+						</ul>
+						<p>Se termina un bucle cuando</p>
+						<ul>
+							<li>Se ejecuta la instrucción <code>break</code>, que termina la iteración actual y el bucle inmediatamente.</li>
+							<li>La condición del bucle no es cierta</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplos</h3>
+						<p style="font-family:monospace;">
+						lista = []
+						cadena = input("Dame una cadena\n")
+						while cadena != "":
+						&emsp;&emsp;lista.append(cadena)
+						&emsp;&emsp;cadena = input("Dame una cadena\n")
+						else:
+						&emsp;&emsp;for elemento in lista:
+						&emsp;&emsp;&emsp;&emsp;print(elemento)
+						</p>
 					</section>
 
 				</section>
