@@ -292,15 +292,15 @@
 					</section>
 					<section>
 						<h3>Ejemplos</h3>
-						<p style="font-family:monospace;">
-						lista = []
-						cadena = input("Dame una cadena\n")
-						while cadena != "":
-						&emsp;&emsp;lista.append(cadena)
-						&emsp;&emsp;cadena = input("Dame una cadena\n")
-						else:
-						&emsp;&emsp;for elemento in lista:
-						&emsp;&emsp;&emsp;&emsp;print(elemento)
+						<p style="font-family:monospace;text-align:left;">
+						lista = []<br>
+						cadena = input("Dame una cadena!\n")<br>
+						while cadena != "":<br>
+						&emsp;&emsp;lista.append(cadena)<br>
+						&emsp;&emsp;cadena = input("Dame una cadena\n")<br>
+						else:<br>
+						&emsp;&emsp;for elemento in lista:<br>
+						&emsp;&emsp;&emsp;&emsp;print(elemento)<br>
 						</p>
 					</section>
 
@@ -317,9 +317,46 @@
 					</code>
 				</section>
 				<section>
-					<h2>Módulos</h2>
-					<p>Reinventar la rueda no suele ser una buena práctica</p>
-					<p></p>
+					<section>
+						<h2>Expresiones regulares</h2>
+						<p>Representación de un lenguaje (conjunto de cadenas de caracteres) mediante un modelo de patrones.</p>
+						<p>Permiten identificar cadenas de texto que cumplan una serie de reglas.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Módulos</h2>
+						<p>Reinventar la rueda no suele ser una buena práctica</p>
+						<p>Existen gran cantidad de bibliotecas para problemas comunes en casi todo tipo de ámbitos</p>
+						<p></p>
+					</section>
+					<section>
+						<h2>Módulos</h2>
+						<p style="font-family:monospace;text-align:left;">
+						from numpy import array, abs<br>
+						negativos = array([-1,-2,-3,-4])<br>
+						positivos = abs(negativos)<br>
+						print(positivos)<br>
+						</p>
+					</section>
+					<section>
+						<h2>Módulos</h2>
+						<p>Los módulos más comunes suelen ser incluidos en la mayoría de distribuciones de Python</p>
+						<p>En caso de que un módulo no esté incluido, podemos descargarlo y añadirlo a nuestro entorno, o usar <code>pip</code></p>
+					</section>
+					<section>
+						<h2><code>pip</code></h2>
+						<p><code>pip</code> se encarga de gestionar dependencias entre módulos e instalar nuevos componentes</p>
+						<p>Utiliza un mecanismo de uso similar a herramientas como <em>Advanced Package Tool</em>, <em>CPAN</em>, etc...</p>
+						<p style="font-family:monospace;text-align:left;">
+							pip install opencv<br>
+							pip install -U opencv<br>
+							pip uninstall opencv<br>
+							pip list<br>
+							pip search &lt;consulta&gt;<br>
+							pip help &lt;comando&gt;
+						</p>
+					</section>
 				</section>
 				<!-- A partir de aquí todo lo de bio -->
 				<section>

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 lista = []
-cadena = input("Dame una cadena\n")
+cadena = input("Dame una cadena!\n")
 while cadena != "":
 	lista.append(cadena)
-	cadena = input("Dame una cadena\n")
+	cadena = input("Dame una cadena!\n")
 else:
 	for elemento in lista:
 		print(elemento)
@@ -21,7 +21,7 @@ print(suma)
 lista = []
 
 while True:
-	cadena = input("Dame una cadena\n")
+	cadena = input("Dame una cadena!\n")
 	if cadena == "":
 		break
 	lista.append(cadena)
