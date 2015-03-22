@@ -111,6 +111,7 @@
 						<pre><code>entero1, entero2 = 10, 3</code>
 						<code class="fragment">entero1/entero2 # == 3</code>
 						<code class="fragment">float(entero1)/float(entero2) # == 3.3333333333333335</code>
+						<code class="fragment">float(entero1) // float(entero2) # == 3</code>
 						</pre>
 					</section>
 					<section>
@@ -362,7 +363,53 @@ resultado = sumar(3,2)</code></pre>
 						<pre><code>[], (), {}, ., +, ?, |,* A-Z, a-z, 1-9, \d, \w, ^,$</code></pre>
 					</section>
 					<section>
-						<p>Introducir tabla mágica</p>
+						<p>Caracteres</p>
+						<table style='font-size:0.8em;width:1200px;'>
+							<thead>
+								<tr>
+									<th></th>
+									<th colspan='19'></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Letras y números</td>
+									<td>Capturan la letra o el número al que representan.</td>
+								</tr>
+								<tr>
+									<td>?</td>
+									<td>Uno o ningún caracter representado por el símbolo previo</td>
+								</tr>
+								<tr>
+									<td>*</td>
+									<td>Entre 0 e infinitos caracteres representados por el símbolo previo</td>
+								</tr>
+								<tr>
+									<td>+</td>
+									<td>Entre 1 e infinitos caracteres representados por el símbolo previo</td>
+								</tr>
+								<tr>
+									<td>{3}, {3,9}</td>
+									<td>Número finito de caracteres a capturar</td>
+								</tr>
+								<tr>
+									<td>(abc)</td>
+									<td>Todo lo que esté dentro de los paréntesis se interpreta como un conjunto</td>
+								</tr>
+								<tr>
+									<td>[A-Z], [1-9], [a-z], [ab314%]</td>
+									<td>Cualquiera de los caracteres (o rangos) incluidos entre los rangos</td>
+								</tr>
+								<tr>
+									<td>\d, \w, \t, \n</td>
+									<td>Números, palabras, tabulador, nueva línea...</td>
+								</tr>
+								<tr>
+									<td>^, $</td>
+									<td>Principio y final de línea</td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 					<section>
 						<p>Introducir ejercicios mágicos</p>
@@ -401,10 +448,6 @@ pip list
 pip search &lt;consulta&gt;
 pip help &lt;comando&gt;</code></pre>
 					</section>
-				</section>
-				<!-- A partir de aquí todo lo de bio -->
-				<section>
-					<h2>FIN DE INFO <br>COMIENZA BIO</h2>
 				</section>
 				<section>
 					<section>
