@@ -753,6 +753,28 @@ for coord_set in coords:
 						</table>
 					</section>
 					<section>
+						<h2>Diccionario 'DNA gencode'</h2>
+						<div>
+						<pre><code>gencode = {
+  'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
+  'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
+  'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
+  'AGC':'S', 'AGT':'S', 'AGA':'R', 'AGG':'R',
+  'CTA':'L', 'CTC':'L', 'CTG':'L', 'CTT':'L',
+  'CCA':'P', 'CCC':'P', 'CCG':'P', 'CCT':'P',
+  'CAC':'H', 'CAT':'H', 'CAA':'Q', 'CAG':'Q',
+  'CGA':'R', 'CGC':'R', 'CGG':'R', 'CGT':'R',
+  'GTA':'V', 'GTC':'V', 'GTG':'V', 'GTT':'V',
+  'GCA':'A', 'GCC':'A', 'GCG':'A', 'GCT':'A',
+  'GAC':'D', 'GAT':'D', 'GAA':'E', 'GAG':'E',
+  'GGA':'G', 'GGC':'G', 'GGG':'G', 'GGT':'G',
+  'TCA':'S', 'TCC':'S', 'TCG':'S', 'TCT':'S',
+  'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
+  'TAC':'Y', 'TAT':'Y', 'TAA':'_', 'TAG':'_',
+  'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W'}
+</code></pre></div>
+					</section>
+					<section>
 						<h2>Código genético (ARN<h2b>m</h2b>)</h2>					
 						<table style='font-size:0.8em;'>
 							<thead>
@@ -945,6 +967,34 @@ for coord_set in coords:
 
 							</tbody>
 						</table>
+					</section>
+					<section>
+						<h2>Diccionario 'ARN gencode'</h2>
+						<div>
+						<pre><code>gencode = {
+ 'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAU': 'N',
+ 'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACU': 'T',
+ 'AGA': 'R', 'AGC': 'S', 'AGG': 'R', 'AGU': 'S',
+ 'AUA': 'I', 'AUC': 'I', 'AUG': 'M', 'AUU': 'I',
+ 'CAA': 'Q', 'CAC': 'H', 'CAG': 'Q', 'CAU': 'H',
+ 'CCA': 'P', 'CCC': 'P', 'CCG': 'P', 'CCU': 'P',
+ 'CGA': 'R', 'CGC': 'R', 'CGG': 'R', 'CGU': 'R',
+ 'CUA': 'L', 'CUC': 'L', 'CUG': 'L', 'CUU': 'L',
+ 'GAA': 'E', 'GAC': 'D', 'GAG': 'E', 'GAU': 'D',
+ 'GCA': 'A', 'GCC': 'A', 'GCG': 'A', 'GCU': 'A',
+ 'GGA': 'G', 'GGC': 'G', 'GGG': 'G', 'GGU': 'G',
+ 'GUA': 'V', 'GUC': 'V', 'GUG': 'V', 'GUU': 'V',
+ 'UAA': '_', 'UAC': 'Y', 'UAG': '_', 'UAU': 'Y',
+ 'UCA': 'S', 'UCC': 'S', 'UCG': 'S', 'UCU': 'S',
+ 'UGA': '_', 'UGC': 'C', 'UGG': 'W', 'UGU': 'C',
+ 'UUA': 'L', 'UUC': 'F', 'UUG': 'L', 'UUU': 'F'}
+ </code></pre></div>
+
+					</section>
+					<section>
+						<h2>¡OJO!</h2>
+						<p>Es importante destacar que en bioinformática sólo se trabaja con una cadena de ADN, por motivos de optimización de almacenamiento.</p>
+						<p>Hay que tener cuidado con los enunciados: 'este ADN codifica...' quiere decir 'usa el código genético de ADN' y 'este ADN se transcribe y se traduce' quiere decir 'transcribe a ARN y usa el código genético de ARN'</p>
 					</section>
 				</section>
 				<section>
