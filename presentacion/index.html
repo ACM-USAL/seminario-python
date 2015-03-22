@@ -16,7 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
+		<link rel="icon" href="images/favicon.ico" />
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -68,15 +68,11 @@
 				<section>
 					<h2>¿Qué es Python?</h2>
 					<ul>
-						<li>Lenguaje de programación interpretado parecido a Perl</li>
-						<li>Sintaxis más sencilla para el principiante y muy clara de leer</li>
-						<li>Tipado dinámico fuerte, orientación a objetos y...<br>
+						<li>Lenguaje de programación interpretado parecido a Perl y otros derivados de C</li>
+						<li class="fragment">Sintaxis más sencilla para el principiante y muy clara de leer</li>
+						<li class="fragment">Tipado dinámico fuerte, orientación a objetos y...<br>
 							¡es multiplataforma!</li>
 					</ul>
-					<!--<div align="left">
-						<p>Nota: Funciona o no??</p>
-						<p text-align='left'><span class="nota_pie">Nota: Funciona o no??</span></p>
-					</div>-->
 					
 				</section>
 				<section>
@@ -96,64 +92,84 @@
 				<section>
 					<section>
 						<h2>Tipos de datos básicos</h2>
-						<p>En Python no es necesario definir el tipo de cada variable (entero, real, caracter). El entorno se encarga de la representación adecuada de cada elemento.</p>
+						<p>En Python no es necesario definir el tipo de cada variable (entero, real, caracter, cadena de caracteres). El entorno se encarga de la representación adecuada de cada elemento en cada momento.</p>
 						<p>Sin embargo, al trabajar con diferentes tipos de datos la conversión debe hacerse de forma explícita, o Python devolverá un error.</p>
+						<p class="fragment">Esto es lo que se conoce como <em>tipado dinámico fuerte</em></p>
+						<aside class="notes">Ejercicio de variables asignadas a otras con consola.</aside>
 					</section>
 					<section>
 						<h3>Números</h3>
 						<p>Python trabaja con cualquier valor numérico típico (entero, real, complejo...) y soporta por defecto la mayoría de operaciones comunes.</p>
-						<code>complejo = 2.1 + 7.8j</code><br>
-						<code>real = 0.1e-3</code><br>
-						<code>entero = 0×17</code><br>
+						<pre><code>complejo = 2.1 + 7.8j</code>
+						<code>real = 0.1e-3</code>
+						<code>entero = 0×17</code></pre>
+						<pre class="fragment"><code>entero_real = int(real)</code></pre>
+						<pre class="fragment"><code>real_entero = float(entero)</code></pre>
+						<pre class="fragment"><code>entero_cadena = int("10000")</code></pre>
+					</section>
+					<section>
+						<pre><code>entero1, entero2 = 10, 3</code>
+						<code class="fragment">entero1/entero2 # == 3</code>
+						<code class="fragment">float(entero1)/float(entero2) # == 3.3333333333333335</code>
+						</pre>
 					</section>
 					<section>
 						<h3>Cadenas de texto</h3>
 						<p>Una cadena de texto consiste en una sucesión de caracteres.</p>
-						<p>Python ofrece formas de trabajar con diferentes codificaciones de caracteres, por defecto, UTF-8.</p>
-						<code>"cadena"</code><br>
-						<code>r"cadena raw"</code><br>
-						<code>u"cäðenα Ünicöde"</code><br>
-						<code>"""cadena<br>
-						en varias<br>
-						líneas"""</code>
+						<p>Python ofrece formas de trabajar con diferentes codificaciones de caracteres.</p>
+						<pre><code>"cadena"
+r"cadena raw"
+u"cäðenα Ünicöde"
+"""cadena
+en varias
+líneas"""</code></pre>
+					</section>
+					<section>
 						<p><span style="color:red">Importante:</span> Una cadena no puede modificarse una vez creada, pero se pueden realizar operaciones sobre la misma que retornen una nueva cadena.</p>
+						<p style="color:red;">Mal (error en tiempo de ejecución)</p>
+						<pre><code>cadena="Gaudeamus igitur"
+cadena[0] = "G"
+cadena[1]="A" #...
+> TypeError: 'str' object does not support item assignment</code></pre>
+						<p style="color:green;">Bien</p>
+						<pre><code>cadena="Gaudeamus igitur"
+cadena_mayusculas=cadena.upper()
+> GAUDEAMUS IGITUR</code></pre>
+						<aside class="notes">
+							Usar cadena.py
+						</aside>
 					</section>
 					<section>
 						<h3>Booleanos</h3>
 						<code>True</code> / <code>False</code>
 						<p>Son un subconjunto de enteros (0,1)</p>
+						<p class="fragment">Permiten representar que algo es verdadero o falso</p>
+						<p class="fragment">Al ser un subconjunto de los enteros, cualquier valor distinto de 0 es equivalente a <code>True</code> y 0 es igual a <code>False</code>.</p>
+						<pre class="fragment"><code>cadena = ""
+if cadena:
+  print("La cadena no está vacía")
+else:
+  print("La cadena está vacía")</code></pre>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Ejemplos básicos</h2>
-						<p style="font-family:monospace">
-							print("Hola, Mundo")
-						</p>
-						<p style="font-family:monospace">
-							print("Nombre")<br>
-							nombre=input()<br>
-							print("Encantado,"+nombre)<br>
-						</p>
+						<pre><code>print("Hola, Mundo")</code>
+						<code>print("Nombre")
+nombre=input()
+print("Encantado,"+nombre)</code></pre>
 					</section>
 					<section>
 						<h2>Ejemplos básicos</h2>
-						<p style="font-family:monospace">
-							entero=3<br>
-							cadena="4"<br>
-						</p>
-						<strong style="color:red">Mal</strong>
-						<p style="font-family:monospace">
-							print(entero+cadena)<br>
-						</p>
-						<strong style="color:green">Bien</strong>
-						<p style="font-family:monospace">
-							print(str(entero)+cadena)<br>
-						</p>
-						<strong style="color:green">Bien</strong>
-						<p style="font-family:monospace">
-							print(entero+int(cadena))<br>
-						</p>
+						<pre><code>entero=3
+cadena="4"</code></pre>
+						<div class="fragment"><strong style="color:red">Mal</strong>
+						<pre><code>print(entero+cadena)</code></pre></div>
+						<div class="fragment"><strong style="color:green">Bien</strong>
+						<pre><code>print(str(entero)+cadena)</code></pre></div>
+						<div class="fragment"><strong style="color:green">Bien</strong>
+						<pre><code>print(entero+int(cadena))</code></pre></div>
 					</section>
 				</section>
 				<section>
@@ -188,7 +204,7 @@
 									<td>Módulo</td>
 								</tr>
 								<tr>
-									<td>==, !=, &lt=, &gt=, &lt, &gt</td>
+									<td>==, !=, &lt;=, &gt;=, &lt;, &gt;</td>
 									<td>Igual, distinto, mayor/menor que...</td>
 							</tbody>
 						</table>
@@ -203,22 +219,24 @@
 						<h3>Listas</h3>
 						<p>Las listas son colecciones ordenadas de datos</p>
 						<p>Admiten cualquier tipo de dato (y no tienen por qué ser uniformes)</p>
-						<code>lista = [4,"8","15",16,23,42, "isla", True]<br>print(lista[0])<br></code>
-						<code>inception = ["leonardo", ["di", "caprio"]]<br>print(inception[1][0])</code>
+						<pre><code>lista = [4,"8","15",16,23,42, "isla", True]
+print(lista[0])</code></pre>
+						<pre><code>inception = ["leonardo", ["di", "caprio"]]
+print(inception[1][0])</code></pre>
 					</section>
 					<section>
 						<h3>Operaciones con listas</h3>
 						<p>Python incorpora varias operaciones especiales para trabajar con listas de forma ágil</p>
-						<code>numeros=[0,1,2,3,4,5,6,7,8,9]<br>
-						print(numeros[0:5])<br>
-						print(numeros[-1])<br>
-						print(numeros[1:10:2])<br>
-						print(numeros[5:])</code>
+						<pre><code>numeros=[0,1,2,3,4,5,6,7,8,9]
+print(numeros[0:5])
+print(numeros[-1])
+print(numeros[1:10:2])
+print(numeros[5:])</code></pre>
 					</section>
 					<section>
 						<h3>Tuplas</h3>
 						<p>Son muy similares a las listas</p>
-						<code>tupla=(4,8,15,"16")<br></code>
+						<pre><code>tupla=(4,8,15,"16")</code></pre>
 						<p>Todas las operaciones de acceso son idénticas</p>
 						<strong>Una tupla no puede modificarse una vez declarada</strong>
 					</section>
@@ -226,104 +244,122 @@
 						<h3>Diccionarios</h3>
 						<p>Un diccionario es una estructura en la que cada miembro está formado por dos elementos, la clave y el valor</p>
 						<p>El acceso a los elementos se realiza por la clave asignada</p>
-						<code>apellidos={"Hugo":"Reyes","Jack":"Shephard","Kate":"Austen"}</code>
-						<code>print(apellidos["Hugo"]</code>
-						<code>apellidos["James"]="Ford"</code>
+						<div class="fragment"><pre><code>apellidos={"Hugo":"Reyes","Jack":"Shephard","Kate":"Austen"}</code>
+						<code>print(apellidos["Hugo"])</code>
+						<code>apellidos["James"]="Ford"</code></pre></div>
+						<p class="fragment">Un diccionario, como cualquier otra estructura, admite cualquier tipo de dato (incluso otro diccionario).</p>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Estructuras de control</h2>
+						<p>Permiten controlar la ejecución del programa en función de una serie de supuestos. Podemos crear condiciones de ejecución, repeticiones...</p>
 					</section>
 					<section>
 						<h3>Condicionales</h3>
 						<p>Determinan la secuencia de código a ejecutar en función de la veracidad de una condición</p>
-						<code style="display:block;text-align:left !important;">numero=3<br>
-						if numero > 4:<br>
-						&emsp;&emsp;print("El número es mayor que cuatro")
-						elif numero == 4:<br>
-						&emsp;&emsp;print("El número es igual a cuatro")
-						else:<br>
-						&emsp;&emsp;print("El número es menor que cuatro")
-						</code>
+						<pre><code>numero = int(input())
+if numero % 2 == 0:
+	print("El número es par")
+else:
+	print("El número es impar")
+						</code></pre>
 					</section>
 					<section>
 						<h3>La sintaxis de Python</h3>
-						<p>Todo bloque de código tiene que estar delimitado. En muchos lenguajes se utilizan llaves ({,}) u otro símbolo similar para agrupar sentencias que deben ejecutarse en el mismo ámbito (dentro de una sentencia condicional, una función...). Python, para permitir una mayor legibilidad, determina el ámbito según el número de espacios que lo preceden (o tabulados)</p>
-						
+						<!--<p>Todo bloque de código tiene que estar delimitado. En muchos lenguajes se utilizan llaves ({,}) u otro símbolo similar para agrupar sentencias que deben ejecutarse en el mismo ámbito (dentro de una sentencia condicional, una función...). Python, para permitir una mayor legibilidad, determina el ámbito según el número de espacios que lo preceden (o tabulados)</p>-->
+						<p class="fragment">Todo conjunto de instrucciones tiene que estar delimitado.</p>
+						<p class="fragment">En muchos lenguajes se utilizan llaves ({,}) u otro símbolo similar.</p>
+						<p class="fragment">Python, para permitir una mayor legibilidad, determina el ámbito según el número de espacios que lo preceden (o tabulados). <span style="color:red">Importante:</span>  Hay que ser consistente.</p>
 					</section>
 					<section>
-						<code style="display:block;text-align:left">
-							if numero >= 4:<br>
-								&emsp;&emsp;print("Estoy dentro del condicional")<br>
-								&emsp;&emsp;if numero == 4:<br>
-								&emsp;&emsp;&emsp;&emsp;print("En el segundo condicional")<br>
-								&emsp;&emsp;print("En el primer condicional")<br>
-							print("Fuera de los dos condicionales")<br>
-						</code>
+					<p>Ejemplo de la sintaxis de Python</p>
+					<div>
+						<pre><code>if numero % 2 == 0:
+  print("Estoy dentro del condicional")
+  if numero == 4:
+    print("En el segundo condicional")
+  print("En el primer condicional")
+print("Fuera de los dos condicionales")</code></pre>
+</div>
+<div>
+<div class="fragment">
+<p>Comparado con Perl...</p>
+<pre><code>if(numero % 2 == 0){
+  print("Estoy dentro del condicional");
+  if(numero == 4){
+    print("En el segundo condicional");
+  }
+  print("En el primer condicional");
+}
+print("Fuera de los dos condicionales");</code></pre>
+</div>
+</div>
+
 					</section>
 					<section>
 						<h3>Bucles</h3>
 						<p>Un bucle es una secuencia de instrucciones que se repiten según una condición</p>
-						<code style="display:block;text-align:left">
-							numero=0<br>
-							while numero &gt; 5:<br>
-							&emsp;&emsp;numero = numero + 1
-						</code>
-					</section>
-					<section>
-						<h3>Bucles</h3>
-						<p>Iterar por los elementos de una estructura es sencillo:</p>
-						<code style="display:block;text-align:left">for elemento in [0,1,2,3,4,5,6,7,8,9]:<br>
-						&emsp;&emsp;print(elemento)</code>
+						<pre><code style="display:block;text-align:left">numero=0
+while numero &gt; 5:
+&emsp;&emsp;numero = numero + 1</code></pre>
+					<div class="fragment"><p>Iterar por los elementos de una estructura es sencillo:</p>
+						<pre><code style="display:block;text-align:left">for elemento in [0,1,2,3,4,5,6,7,8,9]:
+  print(elemento)</code></pre>
+	</div>
 					</section>
 					<section>
 						<h3>Salida de una iteración</h3>
+						<div>
 						<p>Una iteración termina cuando</p>
 						<ul>
 							<li>Se terminan las instrucciones del bucle (salida <em>limpia</em>).</li>
-							<li>Se ejecuta la instruccion <code>continue</code>, pasando a la siguiente ejecución.</li>
+							<li>Se ejecuta la instrucción <code>continue</code>, pasando a la siguiente ejecución.</li>
 						</ul>
+						</div>
+						<div class="fragment">
 						<p>Se termina un bucle cuando</p>
 						<ul>
 							<li>Se ejecuta la instrucción <code>break</code>, que termina la iteración actual y el bucle inmediatamente.</li>
-							<li>La condición del bucle no es cierta</li>
+							<li>La condición del bucle no es cierta (y si no es cierta al comenzar el bucle, nunca se ejecutará).</li>
 						</ul>
+						</div>
 					</section>
 					<section>
 						<h3>Ejemplos</h3>
-						<p style="font-family:monospace;text-align:left;">
-						lista = []<br>
-						cadena = input("Dame una cadena!\n")<br>
-						while cadena != "":<br>
-						&emsp;&emsp;lista.append(cadena)<br>
-						&emsp;&emsp;cadena = input("Dame una cadena\n")<br>
-						else:<br>
-						&emsp;&emsp;for elemento in lista:<br>
-						&emsp;&emsp;&emsp;&emsp;print(elemento)<br>
-						</p>
+						<pre><code>lista = []
+cadena = input("¡Dame una cadena!\n")
+while cadena != "":
+&emsp;&emsp;lista.append(cadena)
+&emsp;&emsp;cadena = input("¡Dame una cadena!\n")
+else:
+&emsp;&emsp;for elemento in lista:
+&emsp;&emsp;&emsp;&emsp;print(elemento)</code></pre>
 					</section>
-
 				</section>
 				<section>
 					<h2>Funciones</h2>
 					<p>Una función es un conjunto invocable de sentencias, que acepta datos de entrada y emite un dato como salida</p>
 					<p>Una vez definidas pueden ser utilizadas en cualquier punto del código.</p>
-					<code style="display:block;text-align:left">
-						def sumar(sumando1, sumando2):<br>
-						&emsp;&emsp;suma = sumando1 + sumando2<br>
-						&emsp;&emsp;return suma
-						resultado = sumar(3,2)
-					</code>
+					<pre><code style="display:block;text-align:left">def sumar(sumando1, sumando2):
+  suma = sumando1 + sumando2
+  return suma
+
+resultado = sumar(3,2)</code></pre>
 				</section>
 				<section>
 					<section>
 						<h2>Expresiones regulares</h2>
 						<p>Representación de un lenguaje (conjunto de cadenas de caracteres) mediante un modelo de patrones.</p>
 						<p>Permiten identificar cadenas de texto que cumplan una serie de reglas.</p>
+						<p>Consiste en un conjunto de caracteres que representan letras, números, símbolos, o conjuntos de estos</p>
+						<pre><code>[], (), {}, ., +, ?, |,* A-Z, a-z, 1-9, \d, \w, ^,$</code></pre>
 					</section>
 					<section>
 						<p>Introducir tabla mágica</p>
+					</section>
+					<section>
+						<p>Introducir ejercicios mágicos</p>
 					</section>
 				</section>
 				<section>
@@ -335,30 +371,29 @@
 					</section>
 					<section>
 						<h2>Módulos</h2>
-						<p style="font-family:monospace;text-align:left;">
-						from numpy import array, abs<br>
-						negativos = array([-1,-2,-3,-4])<br>
-						positivos = abs(negativos)<br>
-						print(positivos)<br>
-						</p>
+						<pre><code>from numpy import array, abs
+negativos = array([-1,-2,-3,-4])
+positivos = abs(negativos)
+print(positivos)</code></pre>
 					</section>
 					<section>
 						<h2>Módulos</h2>
 						<p>Los módulos más comunes suelen ser incluidos en la mayoría de distribuciones de Python</p>
 						<p>En caso de que un módulo no esté incluido, podemos descargarlo y añadirlo a nuestro entorno, o usar <code>pip</code></p>
+						<pre class="fragment"><code>pip install opencv
+> Downloading/unpacking requests
+...</code></pre>
 					</section>
 					<section>
 						<h2><code>pip</code></h2>
 						<p><code>pip</code> se encarga de gestionar dependencias entre módulos e instalar nuevos componentes</p>
 						<p>Utiliza un mecanismo de uso similar a herramientas como <em>Advanced Package Tool</em>, <em>CPAN</em>, etc...</p>
-						<p style="font-family:monospace;text-align:left;">
-							pip install opencv<br>
-							pip install -U opencv<br>
-							pip uninstall opencv<br>
-							pip list<br>
-							pip search &lt;consulta&gt;<br>
-							pip help &lt;comando&gt;
-						</p>
+						<pre><code>pip install opencv
+pip install -U opencv
+pip uninstall opencv
+pip list
+pip search &lt;consulta&gt;
+pip help &lt;comando&gt;</code></pre>
 					</section>
 				</section>
 				<!-- A partir de aquí todo lo de bio -->
