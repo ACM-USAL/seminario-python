@@ -425,13 +425,39 @@ pip help &lt;comando&gt;</code></pre>
 						<p>Primaria: <p class="fragment" text-align='left'>Doble cadena lineal polarizada</p></p>
 						<p>Secundaria: <p class="fragment" text-align='left'>Doble hélice dextrógira</p></p>
 						<p>Terciaria: <p class="fragment" text-align='left'>Compactación hasta formar cromosoma</p></p>
-					
+					</section>
+					<section>
+						<h3>Inversa</h3>
+						<div class='fragment'>
+						<pre><code>dna = raw_input('Escriba una cadena de DNA: ')
+inversa = dna[::-1]</code></pre>
+</div>
 					</section>
 					<section>
 						<h2>Complementareidad de bases</h2>
 						<img src="images/estructuraADN.png" width="800px" alt="Complementareidad de bases">
 						<br>
 						<p>Es debida a los puentes de hidrógeno</p>
+					</section>
+					<section>
+						<h3>Complementaria</h3>
+						<div class='fragment'>
+						<pre><code>compl_dic = {'A':'T','T':'A','C':'G','G':'C'}
+dna = raw_input('Escriba una cadena de DNA: ')
+dna = dna.upper()
+compl = ''
+for nuc in dna:
+    compl += compl_dic[nuc]</code></pre>
+</div>
+						<div class='fragment'>
+						<h3>Inversa Complementaria</h3>
+						<pre><code>dna = raw_input('Escriba una cadena de DNA: ')
+inversa = dna[::-1]
+compl_dic = {'A':'T','T':'A','C':'G','G':'C'}
+invcompl = ''
+for nuc in inversa:
+    invcompl += compl_dic[nuc]</code></pre>
+</div>
 					</section>
 					<section>
 						<h2>Dogma central de la biología molecular</h2>
@@ -446,7 +472,6 @@ pip help &lt;comando&gt;</code></pre>
 							<p>Traducción: <p class="fragment">ARNm -> proteína</p></p>
 							<p>Catálisis: <p class="fragment">proteína -> reacción</p></p>
 						</div>
-					
 					</section>
 					<section>
 						<h2>Replicación</h2>
@@ -457,6 +482,16 @@ pip help &lt;comando&gt;</code></pre>
 						<h2>Transcripción</h2>
 						<iframe width="640" height="360" src="https://www.youtube.com/embed/M568QP1K3sM?rel=0&start=100&end=211&autoplay=0" frameborder="0" allowfullscreen></iframe>
 						<p>Se sintetiza una cadena de ARNm (mensajero) a partir de un ADN. Este es el intermediario para la expresión del gen.</p>
+					</section>
+					<section>
+						<h3>Transcripción</h3>
+						<div class='fragment'>
+						<pre><code>dna = raw_input('Escriba una cadena de DNA: ')
+trans_dic = {'A':'U','T':'A','C':'G','G':'C'}
+mrna = ''
+for nuc in dna:
+    mrna += trans_dic[nuc]</code></pre>
+</div>
 					</section>
 				</section>
 				<section>
@@ -472,6 +507,20 @@ pip help &lt;comando&gt;</code></pre>
 								</ul>
 							<li>Contiene la información genética de algunos virus</li>
 						</ul>
+					</section>
+					<section>
+						<h3>Pasar de ADN a ARN (no transcripción)</h3>
+						<div class='fragment'>
+						<pre><code>dna = raw_input('Escriba una cadena de DNA: ')
+trans_dic = {'A':'A','T':'U','C':'C','G':'G'}
+rna = ''
+for nuc in dna:
+    rna += trans_dic[nuc]</code></pre></div>
+						<div class='fragment'>
+						<h3>Otra forma</h3>
+						<pre><code>dna = raw_input('Escriba una cadena de DNA: ')
+rna = dna.replace('T','U')
+</code></pre></div>
 					</section>
 					<section>
 						<h2>ARN mensajero (ARN<h2b>m</h2b>)</h2>
@@ -491,6 +540,17 @@ pip help &lt;comando&gt;</code></pre>
 						<div class='fragment' style='float:right; width:50%; margin-left:30px'>
 							<h3>Exones</h3>
 							<p>Fragmentos de ARNm que se traducen a proteína. Son el gen codificante propiamente dicho</p>
+						</div>
+					</section>
+					<section>
+						<h2>Intrones y Exones</h2>
+						<div class='fragment'>
+						<pre><code>dna = 'ACTGATGGATTACGATCGATCGATCGATCTACGTACGATCGTAAAATC'
+coords = [[5,13],[21,44]]
+dna_final = ''
+for coord_set in coords:
+	dna_final += dna[coord_set[0]-1:coord_set[1]]
+</code></pre>	
 						</div>
 					</section>
 					<section>
@@ -699,6 +759,28 @@ pip help &lt;comando&gt;</code></pre>
 						</table>
 					</section>
 					<section>
+						<h2>Diccionario 'DNA gencode'</h2>
+						<div>
+						<pre><code>gencode = {
+  'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
+  'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
+  'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
+  'AGC':'S', 'AGT':'S', 'AGA':'R', 'AGG':'R',
+  'CTA':'L', 'CTC':'L', 'CTG':'L', 'CTT':'L',
+  'CCA':'P', 'CCC':'P', 'CCG':'P', 'CCT':'P',
+  'CAC':'H', 'CAT':'H', 'CAA':'Q', 'CAG':'Q',
+  'CGA':'R', 'CGC':'R', 'CGG':'R', 'CGT':'R',
+  'GTA':'V', 'GTC':'V', 'GTG':'V', 'GTT':'V',
+  'GCA':'A', 'GCC':'A', 'GCG':'A', 'GCT':'A',
+  'GAC':'D', 'GAT':'D', 'GAA':'E', 'GAG':'E',
+  'GGA':'G', 'GGC':'G', 'GGG':'G', 'GGT':'G',
+  'TCA':'S', 'TCC':'S', 'TCG':'S', 'TCT':'S',
+  'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
+  'TAC':'Y', 'TAT':'Y', 'TAA':'_', 'TAG':'_',
+  'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W'}
+</code></pre></div>
+					</section>
+					<section>
 						<h2>Código genético (ARN<h2b>m</h2b>)</h2>					
 						<table style='font-size:0.8em;'>
 							<thead>
@@ -891,6 +973,34 @@ pip help &lt;comando&gt;</code></pre>
 
 							</tbody>
 						</table>
+					</section>
+					<section>
+						<h2>Diccionario 'ARN gencode'</h2>
+						<div>
+						<pre><code>gencode = {
+ 'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAU': 'N',
+ 'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACU': 'T',
+ 'AGA': 'R', 'AGC': 'S', 'AGG': 'R', 'AGU': 'S',
+ 'AUA': 'I', 'AUC': 'I', 'AUG': 'M', 'AUU': 'I',
+ 'CAA': 'Q', 'CAC': 'H', 'CAG': 'Q', 'CAU': 'H',
+ 'CCA': 'P', 'CCC': 'P', 'CCG': 'P', 'CCU': 'P',
+ 'CGA': 'R', 'CGC': 'R', 'CGG': 'R', 'CGU': 'R',
+ 'CUA': 'L', 'CUC': 'L', 'CUG': 'L', 'CUU': 'L',
+ 'GAA': 'E', 'GAC': 'D', 'GAG': 'E', 'GAU': 'D',
+ 'GCA': 'A', 'GCC': 'A', 'GCG': 'A', 'GCU': 'A',
+ 'GGA': 'G', 'GGC': 'G', 'GGG': 'G', 'GGU': 'G',
+ 'GUA': 'V', 'GUC': 'V', 'GUG': 'V', 'GUU': 'V',
+ 'UAA': '_', 'UAC': 'Y', 'UAG': '_', 'UAU': 'Y',
+ 'UCA': 'S', 'UCC': 'S', 'UCG': 'S', 'UCU': 'S',
+ 'UGA': '_', 'UGC': 'C', 'UGG': 'W', 'UGU': 'C',
+ 'UUA': 'L', 'UUC': 'F', 'UUG': 'L', 'UUU': 'F'}
+ </code></pre></div>
+
+					</section>
+					<section>
+						<h2>¡OJO!</h2>
+						<p>Es importante destacar que en bioinformática sólo se trabaja con una cadena de ADN, por motivos de optimización de almacenamiento.</p>
+						<p>Hay que tener cuidado con los enunciados: 'este ADN codifica...' quiere decir 'usa el código genético de ADN' y 'este ADN se transcribe y se traduce' quiere decir 'transcribe a ARN y usa el código genético de ARN'</p>
 					</section>
 				</section>
 				<section>
