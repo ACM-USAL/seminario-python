@@ -69,7 +69,7 @@
 					<h2>¿Qué es Python?</h2>
 					<ul>
 						<li>Lenguaje de programación interpretado parecido a Perl y otros derivados de C</li>
-						<li class="fragment">Sintaxis más sencilla para el principiante y muy clara de leer</li>
+						<li class="fragment">Sintaxis más sencilla para el principiante y muy clara.</li>
 						<li class="fragment">Tipado dinámico fuerte, orientación a objetos y...<br>
 							¡es multiplataforma!</li>
 					</ul>
@@ -125,8 +125,8 @@ en varias
 líneas"""</code></pre>
 					</section>
 					<section>
-						<p><span style="color:red">Importante:</span> Una cadena no puede modificarse una vez creada, pero se pueden realizar operaciones sobre la misma que retornen una nueva cadena.</p>
-						<p style="color:red;">Mal (error en tiempo de ejecución)</p>
+						<p><span style="color:#FF5E99">Importante:</span> Una cadena no puede modificarse una vez creada, pero se pueden realizar operaciones sobre la misma que retornen una nueva cadena.</p>
+						<p style="color:#FF5E99;">Mal (error en tiempo de ejecución)</p>
 						<pre><code>cadena="Gaudeamus igitur"
 cadena[0] = "G"
 cadena[1]="A" #...
@@ -145,11 +145,13 @@ cadena_mayusculas=cadena.upper()
 						<p>Son un subconjunto de enteros (0,1)</p>
 						<p class="fragment">Permiten representar que algo es verdadero o falso</p>
 						<p class="fragment">Al ser un subconjunto de los enteros, cualquier valor distinto de 0 es equivalente a <code>True</code> y 0 es igual a <code>False</code>.</p>
-						<pre class="fragment"><code>cadena = ""
+						<div class="fragment">
+						<p>También se aplica a cualquier tipo nulo</p>
+						<pre><code>cadena = ""
 if cadena:
   print("La cadena no está vacía")
 else:
-  print("La cadena está vacía")</code></pre>
+  print("La cadena está vacía")</code></pre></div>
 					</section>
 				</section>
 				<section>
@@ -157,14 +159,14 @@ else:
 						<h2>Ejemplos básicos</h2>
 						<pre><code>print("Hola, Mundo")</code>
 						<code>print("Nombre")
-nombre=input()
+nombre=raw_input()
 print("Encantado,"+nombre)</code></pre>
 					</section>
 					<section>
 						<h2>Ejemplos básicos</h2>
 						<pre><code>entero=3
 cadena="4"</code></pre>
-						<div class="fragment"><strong style="color:red">Mal</strong>
+						<div class="fragment"><strong style="color:#FF5E99">Mal</strong>
 						<pre><code>print(entero+cadena)</code></pre></div>
 						<div class="fragment"><strong style="color:green">Bien</strong>
 						<pre><code>print(str(entero)+cadena)</code></pre></div>
@@ -229,9 +231,13 @@ print(inception[1][0])</code></pre>
 						<p>Python incorpora varias operaciones especiales para trabajar con listas de forma ágil</p>
 						<pre><code>numeros=[0,1,2,3,4,5,6,7,8,9]
 print(numeros[0:5])
+> [0, 1, 2, 3, 4]
 print(numeros[-1])
+> 9
 print(numeros[1:10:2])
-print(numeros[5:])</code></pre>
+> [1, 3, 5, 7, 9]
+print(numeros[5:])
+> [5, 6, 7, 8, 9]</code></pre>
 					</section>
 					<section>
 						<h3>Tuplas</h3>
@@ -258,7 +264,7 @@ print(numeros[5:])</code></pre>
 					<section>
 						<h3>Condicionales</h3>
 						<p>Determinan la secuencia de código a ejecutar en función de la veracidad de una condición</p>
-						<pre><code>numero = int(input())
+						<pre><code>numero = int(raw_input())
 if numero % 2 == 0:
 	print("El número es par")
 else:
@@ -270,7 +276,7 @@ else:
 						<!--<p>Todo bloque de código tiene que estar delimitado. En muchos lenguajes se utilizan llaves ({,}) u otro símbolo similar para agrupar sentencias que deben ejecutarse en el mismo ámbito (dentro de una sentencia condicional, una función...). Python, para permitir una mayor legibilidad, determina el ámbito según el número de espacios que lo preceden (o tabulados)</p>-->
 						<p class="fragment">Todo conjunto de instrucciones tiene que estar delimitado.</p>
 						<p class="fragment">En muchos lenguajes se utilizan llaves ({,}) u otro símbolo similar.</p>
-						<p class="fragment">Python, para permitir una mayor legibilidad, determina el ámbito según el número de espacios que lo preceden (o tabulados). <span style="color:red">Importante:</span>  Hay que ser consistente.</p>
+						<p class="fragment">Python, para permitir una mayor legibilidad, determina el ámbito según el número de espacios que lo preceden (o tabulados). <span style="color:#FF5E99">Importante:</span>  Hay que ser consistente.</p>
 					</section>
 					<section>
 					<p>Ejemplo de la sintaxis de Python</p>
@@ -328,13 +334,13 @@ while numero &gt; 5:
 					<section>
 						<h3>Ejemplos</h3>
 						<pre><code>lista = []
-cadena = input("¡Dame una cadena!\n")
+cadena = raw_input("¡Dame una cadena!\n")
 while cadena != "":
-&emsp;&emsp;lista.append(cadena)
-&emsp;&emsp;cadena = input("¡Dame una cadena!\n")
+  lista.append(cadena)
+  cadena = raw_input("¡Dame una cadena!\n")
 else:
-&emsp;&emsp;for elemento in lista:
-&emsp;&emsp;&emsp;&emsp;print(elemento)</code></pre>
+  for elemento in lista:
+    print(elemento)</code></pre>
 					</section>
 				</section>
 				<section>
@@ -896,7 +902,7 @@ pip help &lt;comando&gt;</code></pre>
 								<li><span style='color: #3278AA;'>Génicas:</span> bases o secuencias</li>
 									<ul>
 										<li>Adición</li>
-										<li>Eliminiación o Deleción</li>
+										<li>Eliminación o Deleción</li>
 										<li>Sustitución</li>
 									</ul>
 							</ul>
