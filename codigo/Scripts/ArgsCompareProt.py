@@ -20,7 +20,7 @@ def fasta2sec(fastafile):
             secuencia = secuencia + linea
     return secuencia
 if len(argv) != 3:
-    print 'Usage: python ArgsCompareProt.py prot1.fasta prot2.fasta
+    print 'Usage: python ArgsCompareProt.py prot1.fasta prot2.fasta'
     exit()
     
 D = fasta2sec(argv[1])
