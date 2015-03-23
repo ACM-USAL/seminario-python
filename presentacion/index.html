@@ -384,15 +384,15 @@ resultado = sumar(3,2)</code></pre>
 								</tr>
 								<tr>
 									<td>?</td>
-									<td>Uno o ningún caracter representado por el símbolo previo</td>
+									<td>Uno o ningún caracter</td>
 								</tr>
 								<tr>
 									<td>*</td>
-									<td>Entre 0 e infinitos caracteres representados por el símbolo previo</td>
+									<td>Entre 0 e infinitos caracteres</td>
 								</tr>
 								<tr>
 									<td>+</td>
-									<td>Entre 1 e infinitos caracteres representados por el símbolo previo</td>
+									<td>Entre 1 e infinitos caracteres</td>
 								</tr>
 								<tr>
 									<td>{3}, {3,9}</td>
@@ -400,11 +400,11 @@ resultado = sumar(3,2)</code></pre>
 								</tr>
 								<tr>
 									<td>(abc)</td>
-									<td>Todo lo que esté dentro de los paréntesis se interpreta como un conjunto</td>
+									<td>Todo lo que esté dentro de los paréntesis como conjunto</td>
 								</tr>
 								<tr>
 									<td>[A-Z], [1-9], [a-z], [ab314%]</td>
-									<td>Cualquiera de los caracteres (o rangos) incluidos entre los rangos</td>
+									<td>Cualquiera de los caracteres (o rangos) incluidos</td>
 								</tr>
 								<tr>
 									<td>\d, \w, \t, \n</td>
@@ -414,12 +414,62 @@ resultado = sumar(3,2)</code></pre>
 									<td>^, $</td>
 									<td>Principio y final de línea</td>
 								</tr>
+								<tr>
+									<td>|</td>
+									<td>Los dos lados entre el | son evaluados</td>
+								</tr>
 							</tbody>
 						</table>
+						<p class="fragment">Las expresiones regulares son un lenguaje por sí solas.</p>
+						<p class="fragment">Referencia: <a href="https://docs.python.org/2/library/re.html">documentación de Python</a></p>
 					</section>
 					<section>
-						<p>Introducir ejercicios mágicos</p>
+						
+						Capturar únicamente los dígitos en
+						<pre>abc123xyz
+define “123”
+var g = 123;</pre>
+						<pre><code>\d+</code></pre>
+
+						Capturar números de teléfono
+						<pre><code>([986])\d{8}</code></pre>
+						Capturar los números de teléfono de Salamanca
+						<pre><code>(923)\d{6}</code></pre>
 					</section>
+					<section>
+						Capturar un fragmento y cualquier cosa que venga a continuación en
+						<pre>diego escribió: "Hola"
+dani escribió: "Hola"
+diego escribió: "¿Qué tal?"
+dani escribió: "Bien"
+</pre>
+<pre class="fragment"><code>diego.*</code></pre>
+					</section>
+					<section>
+						Capturar DNIs
+						<pre><code>(\d){7,8}[A-Z]</code></pre>
+						Capturar secuencias que pueden o pueden no estar:
+						<pre>aabbaa
+aaaa
+aabbccaa
+						</pre>
+						<pre><code>aa(bb)?(cc)?aa</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2><code>re</code>, uso de regex en Python</h2>
+					Python incluye en la instalación básica el módulo <code>re</code>, que permite trabajar con expresiones regulares sin más añadidos.
+					<pre><code>import re
+prog=re.compile('\d+')
+resultado = prog.match(cadena)</code></pre>
+<pre><code>import re
+resultado = re.match('\d+', cadena)
+resultado = re.match('diego', cadena, re.IGNORECASE)
+resultado = re.match('diego', cadena, re.DOTALL)
+resultado = re.match('diego', cadena, re.MULTILINE)
+re.search('diego', cadena)
+re.findall('923', cadena)
+</code></pre>
 				</section>
 				<section>
 					<section>
