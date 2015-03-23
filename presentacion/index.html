@@ -654,6 +654,10 @@ pip help &lt;comando&gt;</code></pre>
 						<h3>Interpretación de MicroArrays</h3>
 						<img src='images/microarray.jpeg' width='50%'>
 					</section>
+					<section>
+						<h3><a href='http://www.openworm.org/'>OpenWorm</a></h3>
+						<img src="images/openworm.png">
+					</section>
 				</section>
 				<section>
 					<section>
@@ -1251,6 +1255,17 @@ for coord_set in coords:
 						<p>Es importante destacar que en bioinformática sólo se trabaja con una cadena de ADN, por motivos de optimización de almacenamiento.</p>
 						<p>Hay que tener cuidado con los enunciados: 'este ADN codifica...' quiere decir 'usa el código genético de ADN' y 'este ADN se transcribe y se traduce' quiere decir 'transcribe a ARN y usa el código genético de ARN'</p>
 					</section>
+					<section>
+						<h2>Traducción de un ARN</h2>
+						<div>
+						<pre><code>gencode = { ... }
+ARN = 'AGCUAGUCAGUCGAUCGACUGACGACGUUACGAUCGAUC'
+prot = ''
+for i in range(0,len(ARN),3):
+	codon = ARN[i:1+3]
+	prot +=  gencode[codon]
+ </code></pre></div>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -1284,6 +1299,11 @@ for coord_set in coords:
 							</ul>
 						</div>
 					</section>
+				</section>
+				<section>
+					<h2>Enzimas de restricción</h2>
+					<iframe width="640" height="400" src="https://www.youtube.com/embed/iuZEpGYOY-k" frameborder="0" allowfullscreen></iframe>
+					<p>Tipo de enzima capaz de reconocer un motivo de ADN y cortar la cadena por ese motivo</p>
 				</section>
 				<section>
 					<section>
