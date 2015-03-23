@@ -17,8 +17,8 @@ while not F:
     F = urllib2.urlopen(final_url)
 db = 10
 error_count = 0
-while db > 4 or db < 1 and error_count < 3:
-    db = int(raw_input('Choose a database number [PDB(1), UniProt(2), UniProt fasta(3)]: '))
+while error_count < 3 and (db > 4 or db < 1):
+    db = int(raw_input('Choose a database number [PDB(1), PDB structure UniProt(3), UniProt fasta(4)]: '))
     if db == 1:
         webbrowser.open(final_url)
         break
@@ -41,8 +41,9 @@ while db > 4 or db < 1 and error_count < 3:
                 exit()
         break
     else: error_count += 1
+    print error_count
 else: 
-    if error_count == 3: 
+    if error_count >= 3: 
         print 'User not responding, exiting...'
         exit()
 print 'Thank you for using.'
